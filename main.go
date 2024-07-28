@@ -18,11 +18,11 @@ func main() {
 
 	routes.RegisterRoutes(server)
 
-	posrt := os.Getenv("PORT")
+	port := os.Getenv("PORT")
 
-	if posrt == "" {
-		posrt = "8080"
+	if port == "" {
+		port = "8080"
 	}
 
-	server.Run(fmt.Sprintf("0.0.0.0:%s", posrt))
+	server.Run(fmt.Sprintf("0.0.0.0:%s", port))
 }

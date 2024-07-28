@@ -1,7 +1,6 @@
 package models
 
 import (
-	"errors"
 	"fmt"
 
 	"github.com/gocolly/colly"
@@ -37,7 +36,7 @@ func SearchSongs(search string) ([]Song, error) {
 	fmt.Println(LINK + search)
 	err := collector.Visit(LINK + search)
 	if err != nil {
-		return nil, errors.New("error fetching songs")
+		return nil, err
 	}
 
 	return songs, nil
